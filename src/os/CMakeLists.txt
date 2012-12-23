@@ -1,0 +1,8 @@
+set(R3_SRCS ${R3_SRCS}
+	${CMAKE_CURRENT_SOURCE_DIR}/dev-dns.c
+	${CMAKE_CURRENT_SOURCE_DIR}/dev-net.c
+	${CMAKE_CURRENT_SOURCE_DIR}/host-args.c
+	${CMAKE_CURRENT_SOURCE_DIR}/host-device.c
+	${CMAKE_CURRENT_SOURCE_DIR}/host-main.c
+	${CMAKE_CURRENT_SOURCE_DIR}/host-stdio.c
+	PARENT_SCOPE)
