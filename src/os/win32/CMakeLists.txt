@@ -1,0 +1,7 @@
+set(R3_SRCS ${R3_SRCS}
+	${CMAKE_CURRENT_SOURCE_DIR}/dev-clipboard.c
+	${CMAKE_CURRENT_SOURCE_DIR}/dev-event.c
+	${CMAKE_CURRENT_SOURCE_DIR}/dev-file.c
+	${CMAKE_CURRENT_SOURCE_DIR}/dev-stdio.c
+	${CMAKE_CURRENT_SOURCE_DIR}/host-lib.c
+	PARENT_SCOPE)
