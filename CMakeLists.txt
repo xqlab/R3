@@ -51,14 +51,25 @@ if(R3_WIN32)
 	add_definitions(-DTO_WIN32)
 	add_definitions(-DUNICODE)
 	add_definitions(-D_FILE_OFFSET_BITS=64)
-	# Compiler/linker flags
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2")
-	set(CMAKE_EXE_LINKER_FLAGS "-Wl,--stack=4194300")
-	# Libraries
-	find_library(LIBM m)
-	find_library(LIBCOMDLG32 comdlg32)
-	find_library(LIBWSOCK32 wsock32)
-	set(R3_LIBS ${LIBM} ${LIBCOMDLG32} ${LIBWSOCK32})
+	if(!MSVC) # MinGW-specific settings
+		# Compiler/linker flags
+		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2")
+		set(CMAKE_EXE_LINKER_FLAGS "-Wl,--stack=4194300")
+		# Libraries
+		find_library(LIBM m)
+		find_library(LIBCOMDLG32 comdlg32)
+		find_library(LIBWSOCK32 wsock32)
+		set(R3_LIBS ${LIBM} ${LIBCOMDLG32} ${LIBWSOCK32})
+	endif()
+	if(MSVC) # MSVC-specific settings
+		# Definitions
+		add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+		# Compiler/linker flags
+		set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /subsystem:windows")
+		set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /stack:4194300")
+		# LIBRARIES
+		set(R3_LIBS comdlg32.lib wsock32.lib)
+	endif()
 endif()
 
 if(R3_LINUX)
