@@ -56,10 +56,9 @@ if(R3_WIN32)
 		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2")
 		set(CMAKE_EXE_LINKER_FLAGS "-Wl,--stack=4194300")
 		# Libraries
-		find_library(LIBM m)
 		find_library(LIBCOMDLG32 comdlg32)
 		find_library(LIBWSOCK32 wsock32)
-		set(R3_LIBS ${LIBM} ${LIBCOMDLG32} ${LIBWSOCK32})
+		set(R3_LIBS ${LIBCOMDLG32} ${LIBWSOCK32})
 	elseif(MSVC) # MSVC-specific settings
 		# Definitions
 		add_definitions(-D_CRT_SECURE_NO_WARNINGS)
