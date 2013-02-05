@@ -51,7 +51,7 @@ if(R3_WIN32)
 	add_definitions(-DTO_WIN32)
 	add_definitions(-DUNICODE)
 	add_definitions(-D_FILE_OFFSET_BITS=64)
-	if(!MSVC) # MinGW-specific settings
+	if(NOT MSVC) # MinGW-specific settings (@@ Use more specific test.)
 		# Compiler/linker flags
 		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2")
 		set(CMAKE_EXE_LINKER_FLAGS "-Wl,--stack=4194300")
@@ -60,8 +60,7 @@ if(R3_WIN32)
 		find_library(LIBCOMDLG32 comdlg32)
 		find_library(LIBWSOCK32 wsock32)
 		set(R3_LIBS ${LIBM} ${LIBCOMDLG32} ${LIBWSOCK32})
-	endif()
-	if(MSVC) # MSVC-specific settings
+	elseif(MSVC) # MSVC-specific settings
 		# Definitions
 		add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 		# Compiler/linker flags
