@@ -256,3 +256,11 @@ add_custom_target(prepare ALL
 
 add_executable(r3 ${R3_SRCS})
 target_link_libraries(r3 ${R3_LIBS})
+
+# -- Additional platform-specific configuration
+
+if(MSVC)
+	# Add target-level dependency from `r3` to `prepare`, as VS (and/or CMake's
+	# VS generator) can't handle file-level cross-target dependencies properly.
+	add_dependencies(r3 prepare)
+endif()
