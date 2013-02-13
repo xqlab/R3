@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(r3)
+project(rebol3)
 
 # -- Target platform detection
 
