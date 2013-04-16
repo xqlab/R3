@@ -24,7 +24,8 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/src/core)
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/os)
 
 # Rebol 3 command used for bootstrap (in the "prepare" target).
-set(R3_MAKE r3-make -qs)
+find_program(R3_MAKE r3-make)
+set(R3_MAKE_CMD ${R3_MAKE} -qs)
 
 # -- Platform-specific configuration
 
@@ -106,7 +107,7 @@ file(GLOB R3_SRCS_MEZZ_BOOT # Basically mirroring src/mezz/boot-files.r
 	)
 
 add_custom_command(
-	COMMAND ${R3_MAKE} ${R3_SRC_TOOLS_DIR}/make-boot.r 0.${R3_TARGET}
+	COMMAND ${R3_MAKE_CMD} ${R3_SRC_TOOLS_DIR}/make-boot.r 0.${R3_TARGET}
 	OUTPUT
 		${PROJECT_SOURCE_DIR}/src/include/tmp-evaltypes.h
 		${PROJECT_SOURCE_DIR}/src/include/tmp-maketypes.h
@@ -148,7 +149,7 @@ add_custom_command(
 	)
 
 add_custom_command(
-	COMMAND ${R3_MAKE} ${R3_SRC_TOOLS_DIR}/make-headers.r
+	COMMAND ${R3_MAKE_CMD} ${R3_SRC_TOOLS_DIR}/make-headers.r
 	OUTPUT
 		${PROJECT_SOURCE_DIR}/src/include/tmp-funcs.h
 		${PROJECT_SOURCE_DIR}/src/include/tmp-funcargs.h
@@ -162,7 +163,7 @@ add_custom_command(
 	)
 
 add_custom_command(
-	COMMAND ${R3_MAKE} ${R3_SRC_TOOLS_DIR}/make-host-ext.r
+	COMMAND ${R3_MAKE_CMD} ${R3_SRC_TOOLS_DIR}/make-host-ext.r
 	OUTPUT
 		${PROJECT_SOURCE_DIR}/src/include/host-ext-graphics.h
 		${PROJECT_SOURCE_DIR}/src/include/host-ext-draw.h
@@ -178,7 +179,7 @@ add_custom_command(
 	)
 
 add_custom_command(
-	COMMAND ${R3_MAKE} ${R3_SRC_TOOLS_DIR}/make-host-init.r
+	COMMAND ${R3_MAKE_CMD} ${R3_SRC_TOOLS_DIR}/make-host-init.r
 	OUTPUT
 		${PROJECT_SOURCE_DIR}/src/boot/host-init.r
 		${PROJECT_SOURCE_DIR}/src/include/host-init.h
@@ -188,7 +189,7 @@ add_custom_command(
 	)
 
 add_custom_command(
-	COMMAND ${R3_MAKE} ${R3_SRC_TOOLS_DIR}/make-os-ext.r
+	COMMAND ${R3_MAKE_CMD} ${R3_SRC_TOOLS_DIR}/make-os-ext.r
 	OUTPUT
 		${PROJECT_SOURCE_DIR}/src/include/host-lib.h
 	DEPENDS
@@ -201,7 +202,7 @@ add_custom_command(
 	)
 
 add_custom_command(
-	COMMAND ${R3_MAKE} ${R3_SRC_TOOLS_DIR}/make-reb-lib.r
+	COMMAND ${R3_MAKE_CMD} ${R3_SRC_TOOLS_DIR}/make-reb-lib.r
 	OUTPUT
 		${PROJECT_SOURCE_DIR}/src/reb-lib-doc.txt
 		${PROJECT_SOURCE_DIR}/src/include/reb-lib.h
