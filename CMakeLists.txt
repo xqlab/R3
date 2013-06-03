@@ -14,7 +14,6 @@ endif()
 
 # -- Common R3 build configuration
 
-add_definitions(-DREB_API)
 add_definitions(-DREB_CORE)
 add_definitions(-DREB_EXE)
 
