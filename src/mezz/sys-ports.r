@@ -264,6 +264,11 @@ init-schemes: func [
 		name: 'clipboard
 	]
 
+	make-scheme [
+		title: "Timer"
+		name: 'timer
+	]
+
 	system/ports/system:   open [scheme: 'system]
 	system/ports/input:    open [scheme: 'console]
 	system/ports/callback: open [scheme: 'callback]

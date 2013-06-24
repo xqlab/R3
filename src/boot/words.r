@@ -163,6 +163,7 @@ dns
 tcp
 udp
 clipboard
+timer
 
 ; Gobs:
 gob

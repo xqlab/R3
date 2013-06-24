@@ -62,6 +62,7 @@ core: [
 	p-event.c
 	p-file.c
 	p-net.c
+	p-timer.c
 	s-cases.c
 	s-crc.c
 	s-file.c
@@ -132,6 +133,7 @@ os-win32: [
 	dev-file.c
 	dev-event.c
 	dev-clipboard.c
+	dev-timer.c
 ]
 
 os-win32g: [

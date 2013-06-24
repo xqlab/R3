@@ -627,5 +627,6 @@ SCHEME_ACTIONS *Scheme_Actions;	// Initial Global (not threaded)
 	Init_DNS_Scheme();
 #ifndef MIN_OS
 	Init_Clipboard_Scheme();
+	Init_Timer_Scheme();
 #endif
 }
