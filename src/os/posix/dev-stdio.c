@@ -53,8 +53,8 @@
 #define SF_DEV_NULL 31		// local flag to mark NULL device
 
 // Temporary globals: (either move or remove?!)
-static int Std_Inp = 0;
-static int Std_Out = 1;
+static int Std_Inp = STDIN_FILENO;
+static int Std_Out = STDOUT_FILENO;
 static FILE *Std_Echo = 0;
 
 static REBOOL Redir_Out = 0; // redirection flags
