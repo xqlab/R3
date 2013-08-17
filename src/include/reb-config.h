@@ -173,6 +173,11 @@ These are now obsolete (as of A107) and should be removed:
 #define HAS_LL_CONSTS
 #endif
 
+#ifdef TO_LINUX_MIPSBE
+#define ENDIAN_BIG
+#define HAS_LL_CONSTS
+#endif
+
 #ifdef TO_HAIKU					// same as Linux/Intel seems to work
 #define ENDIAN_LITTLE
 #define HAS_LL_CONSTS

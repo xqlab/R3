@@ -39,6 +39,7 @@ REBOL [
 	10 libc6-ppc
 	20 libc6-arm
 	30 libc6-mips
+	31 libc6-mipsbe
 	40 libc-x64
 ]
 5 Haiku [
