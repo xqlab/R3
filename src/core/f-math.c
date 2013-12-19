@@ -22,7 +22,7 @@
 **  Module:  f-math.c
 **  Summary: basic math conversions
 **  Section: functional
-**  Author:  Carl Sassenrath
+**  Author:  Carl Sassenrath, Ladislav Mecir
 **  Notes:
 **    Do not underestimate what it takes to make some parts of this
 **    portable over all systems. Modifications to this code should be
@@ -392,7 +392,7 @@ static int Convert_Decimal(REBDEC d, REBI64 *sig, REBINT *point)
 
 REBINT Emit_Decimal(REBYTE *cp, REBDEC d, REBFLG trim, REBYTE point, REBINT decimal_digits) {
 	REBYTE *start = cp, *sig, *rve;
-	int e, sgn;
+	REBINT e, sgn;
 	REBINT digits_obtained;
 
 	/* sanity checks */
