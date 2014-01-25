@@ -52,6 +52,7 @@ REBOL [
 7 FreeBSD [
 	1 x86
 	2 elf-x86
+	40 x64
 ]
 8 NetBSD [
 	1 x86
