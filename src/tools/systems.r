@@ -35,6 +35,7 @@ systems: [
 	[0.4.31 "linux_mipsbe"  posix   [+O2 HID LDL ST1 -LM]]
 	[0.4.40 "linux_x64"     posix   [+O2 HID LDL ST1 -LM]]
 	[0.4.60 "linux_axp"     posix   [+O2 HID LDL ST1 -LM]]
+	[0.4.61 "linux_ia64"    posix   [+O2 HID LDL ST1 -LM]]
 	[0.5.75 "haiku"         posix   [+O2 ST1 NWK]]
 	[0.7.02 "freebsd"       posix   [+O1 C++ ST1 -LM]]
 	[0.7.40 "freebsd_x64"   posix   [+O1 C++ ST1 -LM]]

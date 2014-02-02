@@ -158,6 +158,14 @@ These are now obsolete (as of A107) and should be removed:
 #endif
 #endif
 
+#ifdef TO_LINUX_IA64
+#define ENDIAN_LITTLE
+#define HAS_LL_CONSTS
+#ifndef __LP64__
+#define __LP64__
+#endif
+#endif
+
 #ifdef TO_LINUX_PPC				// Linux/PPC
 #define ENDIAN_BIG
 #define HAS_LL_CONSTS
