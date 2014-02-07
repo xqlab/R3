@@ -41,6 +41,7 @@ systems: [
 	[0.7.40 "freebsd_x64"   posix   [+O1 C++ ST1 -LM]]
 	[0.9.04 "openbsd"       posix   [+O1 C++ ST1 -LM]]
 	[0.16.01 "omnios"       posix   [+O1 ST1 -LM SKT NSL]]
+	[0.16.40 "omnios_x64"   posix   [+O1 ST1 -LM SKT NSL M64]]
 ]
 
 compile-flags: [
@@ -58,6 +59,7 @@ compile-flags: [
 	PAK: "-fpack-struct"          ; pack structures
 	ARC: "-arch i386"             ; x86 32 bit architecture (OSX)
 	M32: "-m32"                   ; use 32-bit memory model
+	M64: "-m64"                   ; use 64-bit memory model
 ]
 
 linker-flags: [
@@ -67,6 +69,7 @@ linker-flags: [
 	LDL: "-ldl"     ; link with dynamic lib lib
 	ARC: "-arch i386" ; x86 32 bit architecture (OSX)
 	M32: "-m32"       ; use 32-bit memory model (Linux x64)
+	M64: "-m64"       ; use 64-bit memory model
 	W32: "-lwsock32 -lcomdlg32"
 	WIN: "-mwindows" ; build as Windows GUI binary
 	CON: "-mconsole" ; build as Windows Console binary

@@ -87,4 +87,5 @@ REBOL [
 ]
 16 OmniOS [
 	1 x86
+	40 x64
 ]

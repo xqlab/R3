@@ -254,6 +254,13 @@ These are now obsolete (as of A107) and should be removed:
 #define HAS_LL_CONSTS
 #endif
 
+#ifdef TO_OMNIOS_X64
+#define ENDIAN_LITTLE
+#define HAS_LL_CONSTS
+#ifndef __LP64__
+#define __LP64__
+#endif
+#endif
 
 //* Defaults ***********************************************************
 
