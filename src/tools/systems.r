@@ -40,6 +40,7 @@ systems: [
 	[0.7.02 "freebsd"       posix   [+O1 C++ ST1 -LM]]
 	[0.7.40 "freebsd_x64"   posix   [+O1 C++ ST1 -LM]]
 	[0.9.04 "openbsd"       posix   [+O1 C++ ST1 -LM]]
+	[0.16.01 "omnios"       posix   [+O1 ST1 -LM SKT NSL]]
 ]
 
 compile-flags: [
@@ -72,6 +73,8 @@ linker-flags: [
 	S4M: "-Wl,--stack=4194300"
 	-LM: "-lm" ; HaikuOS has math in libroot, for instance
 	NWK: "-lnetwork" ; Needed by HaikuOS
+	SKT: "-lsocket" ; Needed by OmniOS
+	NSL: "-lnsl" ; Needed by OmniOS
 ]
 
 other-flags: [

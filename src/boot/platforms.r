@@ -85,3 +85,6 @@ REBOL [
 	5 arm
 	6 sh4
 ]
+16 OmniOS [
+	1 x86
+]
