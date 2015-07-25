@@ -18,6 +18,9 @@ env:
         # Linux x64, release
         - OS_ID=0.4.40 NDEBUG=1
 
+        # Linux ARM, release
+        - OS_ID=0.4.20 NDEBUG=1
+
         # Windows x86, release
         - OS_ID=0.3.1 NDEBUG=1 TOOLS=i686-w64-mingw32-
         # Windows x64, release
@@ -36,6 +39,9 @@ addons:
 
             # For running the 32b bootstrap rebol ("r3-make") on a 64b host:
             - libc6:i386
+
+            # For cross-compiling to ARM.
+            - gcc-4.6-arm-linux-gnueabihf
 
             # For cross-compiling to Windows.
             - binutils-mingw-w64-i686
