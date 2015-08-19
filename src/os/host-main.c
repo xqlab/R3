@@ -357,6 +357,7 @@ int main(int argc, char **argv_ansi)
     int buf_len = 0;
     cmd_buf[buf_len] = 0;
     int i;
+    int line_len;
     BOOL noshortstr = TRUE;
     BOOL nolongstr = TRUE;
    
@@ -384,7 +385,8 @@ int main(int argc, char **argv_ansi)
                 for (i = 0; line[i] != 0; i++) {
                     switch (line[i])  {
                         case QUOTE:
-                            noshortstr = !noshortstr;
+			    if (nolongstr) 
+				noshortstr = !noshortstr;
                             break;
                         case BOXON:
                             if (noshortstr &&  nolongstr)   {
@@ -433,11 +435,12 @@ int main(int argc, char **argv_ansi)
                 }
                 noshortstr = TRUE;
 
-                if (buf_len + i > buf_max)  {
+		line_len = strlen(line);
+                if (buf_len + line_len + 1 > buf_max)  {
                     Put_Str("!!  ERROR!!max buffer len exceeded !!");
                     break;
                 }
-                strncpy(&cmd_buf[buf_len],line,  i);
+                strncpy(&cmd_buf[buf_len],line, line_len);
                 buf_len = buf_len + i;
                 cmd_buf[buf_len] = 0;
                
