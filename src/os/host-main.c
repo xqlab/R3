@@ -393,7 +393,7 @@ int main(int argc, char **argv_ansi)
                                 cont_cmd[cont_len++] = BOXON;
                                 if (cont_len >= CONTMAX) {
                                     tidy("!! ERROR!! max continuation 80 exceeded !!  \n exiting !! \n");
-                                    return(1);
+                                    return 1;
                                 }
                                 cont_str[0] = BOXON ;
                             }
@@ -411,7 +411,7 @@ int main(int argc, char **argv_ansi)
                                 cont_cmd[cont_len++] = BRACEON;
                                 if (cont_len >= CONTMAX) {
                                     tidy("!! ERROR!! max continuation 80 exceeded !!  \n exiting !! \n");
-                                    return(2);
+                                    return 2;
                                 }
                                 cont_str[0] = BRACEON ;
                                 nolongstr = FALSE;
