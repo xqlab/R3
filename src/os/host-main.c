@@ -441,7 +441,7 @@ int main(int argc, char **argv_ansi)
                     break;
                 }
                 strncpy(&cmd_buf[buf_len],line, line_len);
-                buf_len = buf_len + i;
+                buf_len = buf_len + line_len;
                 cmd_buf[buf_len] = 0;
                
                 OS_FREE(line);
